@@ -39,11 +39,7 @@ const deleteMultipleFiles = async (Objects) => {
 
 const uploadSingleFile = multer({
   fileFilter: (req, file, cb) => {
-    if (
-      file.originalname.includes(".jpeg") ||
-      file.originalname.includes(".jpg") ||
-      file.originalname.includes(".png")
-    ) {
+    if (file.originalname.includes(".jpeg") || file.originalname.includes(".jpg") || file.originalname.includes(".png")) {
       cb(null, true);
     } else {
       cb(new Error("Invalid Mime Type, only JPG, JEPG and PNG", false));
